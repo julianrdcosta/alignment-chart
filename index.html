@@ -262,6 +262,20 @@
   }
   .person:hover .remove-btn { opacity: 0.7; }
   .person .remove-btn:hover { opacity: 1; }
+
+  .watermark {
+    position: absolute;
+    bottom: 8px;
+    right: 10px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: rgba(0,0,0,0.35);
+    pointer-events: none;
+    z-index: 1;
+    text-align: right;
+    line-height: 1.4;
+    max-width: 45%;
+  }
 </style>
 </head>
 <body>
@@ -302,6 +316,8 @@
     <div class="arrow left"></div>
     <div class="arrow up"></div>
     <div class="arrow down"></div>
+
+    <div class="watermark">Not serious. People's positions are mostly guesswork.</div>
   </div>
 </div>
 
@@ -433,17 +449,18 @@ function loadState() {
 
 // Default people pre-seeded on the chart
 const DEFAULT_PEOPLE = [
-  { name: "ESYudkowsky",    displayName: "Eliezer Yudkowsky", x: 65, y: 55, img: getAvatarUrl("ESYudkowsky") },
-  { name: "sama",           displayName: "Sam Altman",        x: 75, y: 62, img: getAvatarUrl("sama") },
-  { name: "DarioAmodei",    displayName: "Dario Amodei",      x: 70, y: 35, img: getAvatarUrl("DarioAmodei") },
-  { name: "demishassabis",  displayName: "Demis Hassabis",    x: 72, y: 48, img: getAvatarUrl("demishassabis") },
-  { name: "elonmusk",       displayName: "Elon Musk",         x: 38, y: 32, img: getAvatarUrl("elonmusk") },
-  { name: "ylecun",         displayName: "Yann LeCun",        x: 12, y: 88, img: getAvatarUrl("ylecun") },
-  { name: "repligate",      displayName: "Janus",             x: 35, y: 12, img: getAvatarUrl("repligate") },
-  { name: "davidad",        displayName: "Davidad",           x: 62, y: 30, img: getAvatarUrl("davidad") },
-  { name: "RichardSSutton", displayName: "Richard Sutton",    x: 38, y: 42, img: getAvatarUrl("RichardSSutton") },
-  { name: "gwern",          displayName: "Gwern",             x: 35, y: 50, img: getAvatarUrl("gwern") },
-  { name: "DKokotajlo",     displayName: "Daniel Kokotajlo",  x: 68, y: 58, img: getAvatarUrl("DKokotajlo") },
+  { name: "ESYudkowsky",      displayName: "Eliezer Yudkowsky", x: 85, y: 85, img: getAvatarUrl("ESYudkowsky") },
+  { name: "sama",             displayName: "Sam Altman",        x: 80, y: 62, img: getAvatarUrl("sama") },
+  { name: "DarioAmodei",      displayName: "Dario Amodei",      x: 72, y: 30, img: getAvatarUrl("DarioAmodei") },
+  { name: "demishassabis",    displayName: "Demis Hassabis",    x: 80, y: 52, img: getAvatarUrl("demishassabis") },
+  { name: "elonmusk",         displayName: "Elon Musk",         x: 35, y: 35, img: getAvatarUrl("elonmusk") },
+  { name: "ylecun",           displayName: "Yann LeCun",        x: 10, y: 90, img: getAvatarUrl("ylecun") },
+  { name: "repligate",        displayName: "Janus",             x: 30, y: 8,  img: getAvatarUrl("repligate") },
+  { name: "davidad",          displayName: "Davidad",           x: 50, y: 15, img: getAvatarUrl("davidad") },
+  { name: "RichardSSutton",   displayName: "Richard Sutton",    x: 35, y: 42, img: getAvatarUrl("RichardSSutton") },
+  { name: "gwern",            displayName: "Gwern",             x: 32, y: 50, img: getAvatarUrl("gwern") },
+  { name: "DKokotajlo",       displayName: "Daniel Kokotajlo",  x: 70, y: 55, img: getAvatarUrl("DKokotajlo") },
+  { name: "NinaPanickssery",  displayName: "Nina Panickssery",  x: 20, y: 85, img: getAvatarUrl("NinaPanickssery") },
 ];
 
 // Load saved people on startup, or use defaults
